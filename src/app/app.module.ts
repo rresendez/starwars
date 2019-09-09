@@ -3,11 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductsAlertComponent } from './products-alert/products-alert.component';
+
 
 
 @NgModule({
@@ -15,6 +20,11 @@ import { ProductsAlertComponent } from './products-alert/products-alert.componen
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgbModule,
+    BsDropdownModule.forRoot(),
+    AccordionModule.forRoot(),
+    TooltipModule.forRoot(),
+    ModalModule.forRoot(),
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
     ])
@@ -25,7 +35,7 @@ import { ProductsAlertComponent } from './products-alert/products-alert.componen
     ProductListComponent,
     ProductsAlertComponent
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
 

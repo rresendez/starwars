@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { ConfigService } from './config.service';
 import { products } from '../products';
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  styleUrls: ['./product-list.component.css'],
 })
+
 export class ProductListComponent {
   products = products;
   error: any;
@@ -22,10 +23,13 @@ export class ProductListComponent {
   showConfig () {
     this.configService.getConfig()
     .subscribe(
-      (data) => this.config = {...data},
+      (data) => this.config = data,
       error => this.error = error
     );
     console.log(this.config);
+  }
+  deleteId(id){
+    this.configService.deletePet(id);
   }
 
 }

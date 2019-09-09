@@ -1,5 +1,5 @@
 /* Global Styles */
-
+@import '~bootstrap/dist/css/bootstrap.min.css';
 * {
   font-family: 'Roboto', Arial, sans-serif;
   color: #616161;
@@ -25,6 +25,9 @@ router-outlet + *  {
 
 h1 {
   font-size: 32px;
+  position: absolute;
+  left: 50%;
+  
 }
 
 h2 {
@@ -80,6 +83,8 @@ label {
   background-color: #1976d2;
   color: white;
   border: none;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .button:hover, button:hover {

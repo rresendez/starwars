@@ -1,14 +1,22 @@
-<h2>Star Wars</h2>
-<button (click)="showConfig()">Load API</button>
-<div *ngIf="config">
-  <div *ngFor="let people of config.results">
-    <h2>
-      <a [title]="'Gender: ' + people.gender + ' Height: ' + people.height + 
-       ' Mass: ' + people.mass "> 
-        {{ people.name }} </a>
-    </h2>
-  </div>
 
+
+<button  (click)="showConfig()">Load API</button>
+
+<div *ngIf="config">
+<ngb-accordion [closeOthers]="true" activeIds="static-0">
+  <div *ngFor="let people of config.results; let i = index">
+      <ngb-panel id="static-{{i}}" title="{{people.name}}">
+          <ng-template ngbPanelContent>
+           Height: {{ people.height}} 
+           Mass: {{ people.mass }}
+           Hair Color: {{ people.hair_color }}
+           Gender: {{ people.gender }}
+
+          </ng-template>
+        </ngb-panel>
+    
+  </div>
+</ngb-accordion>
   </div>
 
 
